@@ -1,0 +1,56 @@
+<%- include("partials/header.ejs") %>
+<section class="heading">
+    <h1>BLOG</h1>
+  
+</section>
+<div class ="container">
+    <a href="/createBlog">
+    <button class="create-blog-btn">Create New Blog</button>
+    </a>
+</div>
+
+
+<section class="blog-container">
+    
+    <div class="blog-post">
+        <img src="/images/cats.jpg" alt="Blog 1">
+        <h3>Cats are awesome!</h3>
+        <p>Why your cat is smarter than you think </p>
+    </div>
+    <div class="blog-post">
+        <img src="/images/dogs.jpg" alt="Blog 2">
+        <h3>Blog Post 2</h3>
+        <p>Short description of the blog post.</p>
+    </div>
+    <div class="blog-post">
+        <img src="/images/galaxy.jpg" alt="Blog 3">
+        <h3>Blog Post 3</h3>
+        <p>Short description of the blog post.</p>
+    </div>
+    <div class="blog-post">
+        <img src="/images/travel.jpg" alt="Blog 4">
+        <h3>Travel essentials</h3>
+        <p>Consider these before your next flight.</p>
+    </div>
+    <% if (blogs.length > 0) { %>
+        <ul>
+            <% blogs.forEach(blog => { %>
+                <li>
+                    <h3><%= blog.title %></h3>
+                    <p><%= blog.content %></p>
+
+                    <!-- Edit Button -->
+                    <a href="/blogs/<%= blog.id %>/edit"><button>Edit</button></a>
+
+                    <!-- Delete Form -->
+                    <form action="/blogs/<%= blog.id %>/delete" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+    
+  
+</section>
+<%- include("partials/footer.ejs") %>
