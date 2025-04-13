@@ -1,13 +1,13 @@
 import express from "express";
 import bodyParser from "body-parser";
-
-
+import methodOverride from "method-override";
 
 const app =express();
 const port =3000;
 app.use(express.static("public"));
 let blogs=[];
 
+app.use(methodOverride("_method"));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use((req, res, next) => {
@@ -55,9 +55,10 @@ app.post("/blogs/:id/update", (req, res) => {
     res.redirect("/");
 });
 
-app.get("/blogs/:id/delete", (req, res) => {
+
+app.delete("/blogs/:id", (req, res) => {
     const blogId = parseInt(req.params.id);
-    blogs = blogs.filter(b => b.id !== blogId);
+    blogs = blogs.filter(blog => blog.id !== blogId);
     res.redirect("/");
 });
 

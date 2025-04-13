@@ -1,12 +1,16 @@
 <%- include("partials/header.ejs") %>
-<h1>Create Your Own Blog Here</h1>
-<form action="/" method="POST">
-    <label>Title:</label>
-    <input type ="text" name="title">
+<main class="create-blog-container">
+    <h1>Create Your Own Blog Here</h1>
+    <form action="/" method="POST" class="blog-form">
+            <label for="title">Title:</label>
+            <input type ="text" name="title" id="title" required>
 
-    <label>Content:</label>
-    <textarea name="content"></textarea>
-    <button type="submit">Create</button>
-</form>
+            <label for="content">Content:</label>
+            <textarea name="content" id="content" row="6" required></textarea>
+            <button type="submit">Create</button>
+    </form>
 
-<a href="/">Back to Home</a>
+    <a href="/" class="back-link">Back to Home</a>
+</main>
+
+<%- include("partials/footer.ejs") %>

@@ -2,19 +2,24 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #7f8079;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .navbar{
-    background-color: #a4d3e5;
+    background-color: #21221e;
     display: flex;
+    justify-content: center;
+    gap: 2rem;
     padding: 15px 20px;
 }
 .nav-item{
     list-style: none;
+    
 }
 .nav-item a{
     text-decoration: none;
-    color: rgb(31, 23, 23);
+    color: rgb(227, 212, 212);
+    background-color: #21221e;
     font-size: 16px;
     padding: 10px 15px;
     transition: 0.3s;

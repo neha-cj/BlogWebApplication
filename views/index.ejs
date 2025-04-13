@@ -1,56 +1,71 @@
 <%- include("partials/header.ejs") %>
-<section class="heading">
-    <h1>BLOG</h1>
-  
-</section>
-<div class ="container">
-    <a href="/createBlog">
-    <button class="create-blog-btn">Create New Blog</button>
-    </a>
-</div>
 
+<section class="hero">
+    <div class="hero-left">
+        <h1>Travel Blog</h1>
+        <h2>Discover the World's <span class="highlight">Hidden</span> Wonders</h2>
+        <section>
+            <a href="/createBlog">
+                <button class="create-blog-btn">Create New Blog</button>  
+            </a>
+        </section>
+    </div>
+    <div class="hero-right">
+        <div class="img-grid">
+            <img class="img-lg" src="/images/india.jpg" alt="india" style="grid-column: 1 / span 1.5; grid-row: 1 / span 2;">
+            <img class="img-sm" src="/images/vietnam.jpg" alt="vietnam" style="grid-column: 2 / span 1; grid-row: 1 / span 1;">
+            <img class="img-sm" src="/images/teahorizontal.jpg" alt="Tea" style="grid-column: 2 / span 1; grid-row: 2 / span 2;">
+        </div>
+    </div>
+</section>
 
 <section class="blog-container">
-    
+    <!-- 🔹 Static Blog Posts -->
     <div class="blog-post">
         <img src="/images/cats.jpg" alt="Blog 1">
         <h3>Cats are awesome!</h3>
-        <p>Why your cat is smarter than you think </p>
+        <p>Why your cat is smarter than you think</p>
     </div>
+
     <div class="blog-post">
         <img src="/images/dogs.jpg" alt="Blog 2">
         <h3>Blog Post 2</h3>
         <p>Short description of the blog post.</p>
     </div>
+
     <div class="blog-post">
         <img src="/images/galaxy.jpg" alt="Blog 3">
         <h3>Blog Post 3</h3>
         <p>Short description of the blog post.</p>
     </div>
+
     <div class="blog-post">
         <img src="/images/travel.jpg" alt="Blog 4">
         <h3>Travel essentials</h3>
         <p>Consider these before your next flight.</p>
     </div>
+
+    <!-- 🔸 Dynamic Blog Posts -->
     <% if (blogs.length > 0) { %>
-        <ul>
-            <% blogs.forEach(blog => { %>
-                <li>
-                    <h3><%= blog.title %></h3>
-                    <p><%= blog.content %></p>
+        <% blogs.forEach(blog => { %>
+            <div class="blog-post">
+                <% if (blog.imagePath) { %>
+                    <img src="../public/images/india.jpg" alt="<%= blog.title %>">
 
-                    <!-- Edit Button -->
-                    <a href="/blogs/<%= blog.id %>/edit"><button>Edit</button></a>
+                <% } %>
+                <h3><%= blog.title %></h3>
+                <p><%= blog.content %></p>
 
-                    <!-- Delete Form -->
-                    <form action="/blogs/<%= blog.id %>/delete" method="POST" style="display:inline;">
-                        <button type="submit">Delete</button>
-                    </form>
-                </li>
-            <% }) %>
-        </ul>
+                <!-- Edit Button -->
+                <a href="/blogs/<%= blog.id %>/edit"><button>Edit</button></a>
+
+                <!-- Delete Form -->
+                <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% }) %>
     <% } %>
-    
-  
 </section>
+
 <%- include("partials/footer.ejs") %>

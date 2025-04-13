@@ -1,0 +1,64 @@
+.create-blog-container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 2rem;
+    background: url("/images/vietnam.png") no-repeat center/cover;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.create-blog-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.blog-form label {
+    font-weight: bold;
+    color: #222;
+}
+
+.blog-form input,
+.blog-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.blog-form button {
+    background-color: #34383c;
+    color: white;
+    font-size: 1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.blog-form button:hover {
+    background-color: #0d0e10;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: #34383c;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #0d0e10;
+}
