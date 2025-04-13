@@ -50,7 +50,7 @@
         <% blogs.forEach(blog => { %>
             <div class="blog-post">
                 <% if (blog.imagePath) { %>
-                    <img src="../public/images/india.jpg" alt="<%= blog.title %>">
+                    <img src="<%= post.imageUrl %>" alt="<%= blog.title %>">
 
                 <% } %>
                 <h3><%= blog.title %></h3>

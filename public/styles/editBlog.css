@@ -1,0 +1,74 @@
+.edit-blog-container {
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 30px;
+   
+    background-image: url("/images/vietnam.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.edit-blog-container h1,
+.edit-blog-container h2 {
+    text-align: center;
+    color: #1f1f1f;
+    margin-bottom: 20px;
+}
+
+.blog-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-form label {
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333;
+}
+
+.blog-form input[type="text"],
+.blog-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: vertical;
+}
+
+.blog-form textarea {
+    min-height: 150px;
+}
+
+.blog-form button {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #6c584c;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.blog-form button:hover {
+    background-color: #a98467;
+}
+
+.back-link {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    color: #34383c;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.back-link:hover {
+    color: #000;
+}

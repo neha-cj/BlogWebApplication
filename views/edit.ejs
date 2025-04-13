@@ -1,15 +1,20 @@
-<!- include("partials/header.ejs") %> 
-<h1>Edit your Blog Here</h1>
+<%- include("partials/header.ejs") %>
 
-<h2>Edit Blog: <%= blog.title %></h2>
+<section class="edit-blog-container">
+    <h1>Edit your Blog Here</h1>
+    <h2>Edit Blog: <%= blog.title %></h2>
 
-<form action="/blogs/<%= blog.id %>/update" method="POST">
-    <label>Title: </label>
-    <input type="text" name="title" value="<%= blog.title %>"> 
+    <form action="/blogs/<%= blog.id %>/update" method="POST" class="blog-form">
+        <label for="title">Title:</label>
+        <input type="text" name="title" value="<%= blog.title %>" required>
 
-    <label>Content: </label>
-    <textarea name="content"><%=blog.content %></textarea>
-    <button type ="submit">Update Blog</button>
-</form>
+        <label for="content">Content:</label>
+        <textarea name="content" required><%= blog.content %></textarea>
 
-<a href="/">Back to Home</a>
+        <button type="submit">Update Blog</button>
+    </form>
+
+    <a href="/" class="back-link">← Back to Home</a>
+</section>
+
+<%- include("partials/footer.ejs") %>

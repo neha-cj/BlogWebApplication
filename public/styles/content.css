@@ -75,6 +75,7 @@ main{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 20px;
     align-items: flex-start;
 }
 
