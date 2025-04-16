@@ -22,15 +22,12 @@ app.get("/createBlog",(req,res)=>{
     res.render("createBlog.ejs");
 });
 
-
-
 app.post("/",(req,res)=>{
     const{title, content} =req.body;
     const id = blogs.length + 1;
     blogs.push({id, title, content});
     res.redirect("/");
 });
-
 
 app.get("/blogs/:id/edit", (req, res) => {
     const blogId = parseInt(req.params.id); // Get blog ID from URL
@@ -55,14 +52,11 @@ app.post("/blogs/:id/update", (req, res) => {
     res.redirect("/");
 });
 
-
 app.delete("/blogs/:id", (req, res) => {
     const blogId = parseInt(req.params.id);
     blogs = blogs.filter(blog => blog.id !== blogId);
     res.redirect("/");
 });
-
-
 
 app.listen(port, ()=>{
     console.log(`listening on port ${port}`);
