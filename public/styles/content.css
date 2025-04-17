@@ -112,6 +112,16 @@ main{
     font-style: normal;
     background-color: #2b3a2c;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+.blog-post-footer {
+    background-color: #2b3a2c;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 75px;
 }
 
 @media (max-width: 600px) {
