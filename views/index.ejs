@@ -24,7 +24,9 @@
     <div class="blog-post">
         <img src="/images/cats.jpg" alt="Blog 1">
         <h3>Cats are awesome!</h3>
-        <p>Why your cat is smarter than you think</p>
+        <p>Lorem ipsum dolor sit am...</p>
+        <a href="/static/cats-blog" class="read-more-btn">Read More</a>
+
     </div>
 
     <div class="blog-post">
@@ -50,11 +52,12 @@
         <% blogs.forEach(blog => { %>
             <div class="blog-post">
                 <% if (blog.imagePath) { %>
-                    <img src="<%= post.imageUrl %>" alt="<%= blog.title %>">
+                    <img src="<%= blog.imageUrl %>" alt="<%= blog.title %>">
 
                 <% } %>
                 <h3><%= blog.title %></h3>
-                <p><%= blog.content %></p>
+                <p><%= blog.content.substring(0, 100) %>...</p>
+                <a href="/blogs/<%= blog.id %>" class="read-more-btn">Read More</a>
 
                 <!-- Edit Button -->
                 <a href="/blogs/<%= blog.id %>/edit"><button>Edit</button></a>

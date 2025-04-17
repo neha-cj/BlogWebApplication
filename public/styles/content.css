@@ -107,6 +107,12 @@ main{
     font-size: 14px;
     color: #dbcfcf;
 }
+.read-more-btn{
+    color: #dbcfcf;
+    font-style: normal;
+    background-color: #2b3a2c;
+    text-decoration: none;
+}
 
 @media (max-width: 600px) {
     .hero {

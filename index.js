@@ -25,16 +25,28 @@ app.get("/createBlog",(req,res)=>{
 });
 
 app.post("/",(req,res)=>{
-    const{title, content} =req.body;
+    const{title, content, imagePath} =req.body;
     const id = blogs.length + 1;
-    blogs.push({id, title, content});
+    blogs.push({id, title, content, imagePath});
     res.redirect("/");
 });
 
+app.get("/blogs/:id", (req, res) => {
+    const blogId = parseInt(req.params.id);
+    const blog = blogs.find(b => b.id === blogId); 
+    if (!blog) {
+        return res.status(404).send("Blog not found");
+    }
+    res.render("blogDetails", { blog });
+});
+
+app.get("/static/cats-blog", (req, res) => {
+    res.render("staticBlogs/blog1.ejs");
+});
+
+
 app.get("/blogs/:id/edit", (req, res) => {
     const blogId = parseInt(req.params.id); // Get blog ID from URL
-    const { title, content } = req.body; // Get updated values from form
-
     // Find the blog in the array
     const blog= blogs.find(b => b.id === blogId);
     
