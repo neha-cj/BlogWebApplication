@@ -1,3 +1,3 @@
 # BlogWebApplication
-Simple Travel blogging Website - create, edit, delete blogs(no database).
-Using Express.js
+Simple Travel blogging Website - create, edit, delete blogs.
+Using Express.js,Python Flask and MongoDB backend
