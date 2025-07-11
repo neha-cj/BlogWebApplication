@@ -49,13 +49,6 @@ footer *::after {
     color: #ffcc00;
 }
 
-.middle-green{
-    background-color: #2b3a2c;
-    height: 10rem;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
 .blog-btn {
     background-color: #2b3a2c;
     color: #ffffff;
